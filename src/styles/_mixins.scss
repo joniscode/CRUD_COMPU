@@ -1,0 +1,15 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition($property: all) {
+    transition: $property var(--transition-speed) var(--transition-timing);
+}
+
+@mixin glow-effect($color: var(--primary-color)) {
+    box-shadow: 0 0 10px $color,
+                0 0 20px $color,
+                0 0 30px $color;
+}
