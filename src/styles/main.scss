@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'mixins';
+@use 'variables';
+@use 'mixins';
 
 html, body {
     margin: 0;
@@ -308,6 +308,7 @@ $breakpoint-desktop: 1024px;
     overflow: hidden;
     transition: transform $transition-duration ease;
     position: relative;
+    max-height: 400px;
     
     &::before {
         content: '';
@@ -355,6 +356,11 @@ $breakpoint-desktop: 1024px;
         margin: 0 0 1rem;
         color: #2d3436;
         font-weight: 600;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; 
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     &__description {
@@ -362,6 +368,11 @@ $breakpoint-desktop: 1024px;
         color: #636e72;
         margin-bottom: 1rem;
         line-height: 1.6;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3; 
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     &__duration {
@@ -405,6 +416,320 @@ $breakpoint-desktop: 1024px;
     }
 }
 
+
+//Estilos Empleados
+.employeed {
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+  
+    h2 {
+      background-color: var();
+      color: #4CAF50;
+      padding: 1rem;
+      text-align: center;
+      border-radius: var(--border-radius);
+      -webkit-border-radius: var(--border-radius);
+      -moz-border-radius: var(--border-radius);
+      -ms-border-radius: var(--border-radius);
+      -o-border-radius: var(--border-radius);
+}
+  
+    .employee-btn {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+  
+      button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.5rem 1.2rem;
+        cursor: pointer;
+        font-size: 1rem;
+        border-radius: var(--border-radius);
+        -webkit-border-radius: var(--border-radius);
+        -moz-border-radius: var(--border-radius);
+        -ms-border-radius: var(--border-radius);
+        -o-border-radius: var(--border-radius);
+        &:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+          }    
+    }
+  
+      .delete-btn {
+        background-color: #f44336;
+      }
+    }
+  
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: auto;
+        
+      thead {
+        text-align: center;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 0.75rem;
+        font-size: 0.95rem;
+      }
+  
+      th {
+        background-color: #f0f0f0;
+      }
+  
+      img.employee-image {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid #ccc;
+      }
+  
+      button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.3rem 0.8rem;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        border-radius: var(--border-radius);
+        -webkit-border-radius: var(--border-radius);
+        -moz-border-radius: var(--border-radius);
+        -ms-border-radius: var(--border-radius);
+        -o-border-radius: var(--border-radius);
+}
+        
+            .delete-btn {
+                background-color: #f44336;
+            }
+            }
+    // Modal styles
+    
+  
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        height: 65%;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: var(--border-radius);
+        -webkit-border-radius: var(--border-radius);
+        -moz-border-radius: var(--border-radius);
+        -ms-border-radius: var(--border-radius);
+        -o-border-radius: var(--border-radius);
+        &.active {
+            display: block;
+        }
+    }
+  
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+  
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+  
+      .close {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #aaa;
+        cursor: pointer;
+  
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  
+    .form-group {
+      margin-bottom: 1rem;
+  
+      label {
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+  
+      input,
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 0.95rem;
+      }
+    }
+  
+    .form-actions {
+      text-align: right;
+      margin-top: 1.5rem;
+  
+      .btn-save {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+  
+      .btn-cancel {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .employeed {
+      table {
+        width: 100%;
+      }
+  
+      .employee-btn {
+        flex-direction: column;
+        align-items: center;
+  
+        button {
+          width: 90%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .employeed {
+      padding: 1rem;
+  
+      table {
+        font-size: 0.85rem;
+  
+        th:nth-child(2),
+        td:nth-child(2),  // Imagen
+        th:nth-child(5),
+        td:nth-child(5),  // Fecha Nacimiento
+        th:nth-child(7),
+        td:nth-child(7) { // Rol
+          display: none;
+        }
+  
+        img.employee-image {
+          width: 30px;
+          height: 30px;
+        }
+      }
+  
+      .employee-btn {
+        flex-direction: column;
+        gap: 0.5rem;
+  
+        button {
+          width: 100%;
+          padding: 0.8rem;
+          font-size: 1rem;
+        }
+      }
+  
+      .modal-content {
+        width: 95%;
+        padding: 1rem;
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .employeed {
+
+      .modal         {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 49%;
+        top: 50%;
+        width: 100%;
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        margin: 0%;
+        padding: 20px;
+        transform: translate(-50%, -50%);
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: var(--border-radius);
+        -webkit-border-radius: var(--border-radius);
+        -moz-border-radius: var(--border-radius);
+        -ms-border-radius: var(--border-radius);
+        -o-border-radius: var(--border-radius);
+        &.active {
+            display: block;
+        }
+      }
+      table {
+        width: 80%;
+      
+        th,
+        td {
+          padding: 0.5rem;
+          font-size: 0.75rem;
+        }
+      
+        td:nth-child(6),
+        th:nth-child(6) {
+          display: none;
+        }
+        button {
+                margin: 5px;
+            }
+      }
+  
+      .modal-content {
+        max-width: 95%;
+        padding: 0px;
+
+      }
+  
+      .form-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+  
+        .btn-save,
+        .btn-cancel {
+          width: 100%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 
 
 
@@ -485,10 +810,15 @@ $breakpoint-desktop: 1024px;
 .contact-us {
     background-color: var(--light-bg);
     padding: var(--spacing-lg);
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin: var(--spacing-md) auto;
     max-width: 600px;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.02);
+    }
 
     &__container {
         display: flex;
@@ -497,9 +827,10 @@ $breakpoint-desktop: 1024px;
     }
 
     &__title {
-        font-size: 24px;
+        font-size: 28px;
         color: var(--text-dark);
         margin-bottom: var(--spacing-md);
+        text-align: center;
     }
 
     &__description {
@@ -528,21 +859,22 @@ $breakpoint-desktop: 1024px;
         &__input,
         &__textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid var(--text-dark);
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 16px;
             color: var(--text-dark);
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, box-shadow 0.3s;
 
             &:focus {
                 border-color: var(--primary-color);
+                box-shadow: 0 0 5px var(--primary-color);
                 outline: none;
             }
         }
 
         &__textarea {
-            height: 100px;
+            height: 120px;
             resize: none; 
         }
 
@@ -550,14 +882,15 @@ $breakpoint-desktop: 1024px;
             background-color: var(--primary-color);
             color: var(--text-light);
             border: none;
-            border-radius: 4px;
-            padding: 10px;
+            border-radius: 8px;
+            padding: 12px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
 
             &:hover {
-                background-color: (var(--primary-color), 10%);
+                background-color: var(--secondary-color);
+                transform: translateY(-2px);
             }
         }
     }

@@ -1,0 +1,71 @@
+<main class="employeed">
+  <section id="employee-grid">
+    <h2>Lista de Empleados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="select-all" /></th>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="employee-list">
+        <!-- Se llena dinámicamente -->
+      </tbody>
+    </table>
+    <div class="employee-btn">
+      <button id="add-employee-btn">➕ Agregar Empleado</button>
+      <button class="delete-btn" id="delete-selected-btn" disabled>🗑 Eliminar Seleccionados</button>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Agregar Empleado</h3>
+        <span class="close">&times;</span>
+      </div>
+      <form id="itemForm">
+        <div class="form-group">
+          <label for="image">Imagen:</label>
+          <input type="file" id="image" name="image" accept="image/*" />
+        </div>
+        <div class="form-group">
+          <label for="name">Nombre *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="surname">Apellido</label>
+          <input type="text" id="surname" name="surname" />
+        </div>
+        <div class="form-group">
+          <label for="dateOfBirth">Fecha de Nacimiento *</label>
+          <input type="date" id="dateOfBirth" name="dateOfBirth" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="role">Rol *</label>
+          <select id="role" name="role" required>
+            <option value="">Seleccione un rol</option>
+            <option value="Desarrollador">Desarrollador</option>
+            <option value="Team Leader">Team Leader</option>
+            <option value="CTO">CTO</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-save">Guardar</button>
+          <button type="button" class="btn-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
